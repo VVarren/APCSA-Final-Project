@@ -1,0 +1,3 @@
+class space_shooter {
+
+}
