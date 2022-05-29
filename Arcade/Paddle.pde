@@ -1,7 +1,7 @@
 class Paddle{
 
   float x;
-  private float y;
+  float y;
   float w = width/30;
   float h = height/5;
 

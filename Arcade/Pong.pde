@@ -27,6 +27,9 @@ class Pong{
     if (RightPaddle.y <= 0){
       RightPaddle.y =0;
     }  
+    if (RightPaddle.y >= 0){
+      RightPaddle.y =0;
+    }  
    }
   }
 
