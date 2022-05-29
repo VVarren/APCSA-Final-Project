@@ -2,10 +2,12 @@ class Pong{
   
   Paddle LeftPaddle = new Paddle(0,0);
   Paddle RightPaddle = new Paddle(width-width/30,0);
+  PongBall Ball = new PongBall();
   
   void display(){
     LeftPaddle.display();
     RightPaddle.display();
+    Ball.display();
   }
   
   void update(){
@@ -24,12 +26,8 @@ class Pong{
        LeftPaddle.y += height/30;
     }  
     //boundary
-    if (RightPaddle.y <= 0){
-      RightPaddle.y =0;
-    }  
-    if (RightPaddle.y >= 0){
-      RightPaddle.y =0;
-    }  
+    RightPaddle.y = constrain(RightPaddle.y,0,height-RightPaddle.h);
+    LeftPaddle.y = constrain(LeftPaddle.y,0,height-RightPaddle.h);    
    }
   }
 
