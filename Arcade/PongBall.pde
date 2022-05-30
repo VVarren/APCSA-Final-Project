@@ -1,21 +1,27 @@
 class PongBall{
-  int w = int(width/2);
+  int x = int(width/2);
   int y = int(height/2);
+  int xVelocity;
+  int yVelocity;
   
-  void display(){
-    ellipse(w,y,15,15);
-  }
-  void physics(){
-    
-  }
-  
-   void start(){
-     int num = int(random(1));
+  PongBall(){
+    int num = int(random(2));
      if (num == 1){
-       w += 20;
+       xVelocity = 5;
       }
      else{
-       y += 20;
+       xVelocity = -5;
      }
+  }
+  void display(){
+    ellipse(x,y,15,15);
+  }
+  void physics(){
+    //keep velocity and bounce it when
+    // touch x and it moves y
+  }
+  
+   void move(){
+     x += xVelocity;
    }
 }

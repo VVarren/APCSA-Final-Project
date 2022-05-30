@@ -8,9 +8,10 @@ class Pong{
     LeftPaddle.display();
     RightPaddle.display();
     Ball.display();
+    
   }
-  
   void update(){
+    Ball.move();
    //getting user input
    if(keyPressed){
     if (keyCode == DOWN){
