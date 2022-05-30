@@ -1,21 +1,18 @@
-class Paddle{
+class Paddle {
 
-  float x;
-  float y;
-  float w = width/30;
-  float h = height/5;
+  int x;
+  int y;
+  int w = width/30;
+  int h = height/5;
 
-  Paddle(float x,float y){
+  Paddle(int x, int y) {
     this.x = x;
     this.y = y;
+  }
+  void display() {
+    rect(x, y, w, h);
+  }
 
+  void move() {
   }
-  void display(){
-    rect(x,y,w,h);
-  }
-  
-  void move(){
-    
-  }
-  
 }
