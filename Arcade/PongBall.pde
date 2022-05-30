@@ -5,11 +5,24 @@ class PongBall {
   int yVelocity;
 
   PongBall() {
-    int num = int(random(2));
-    if (num == 1) {
+    int LeftRight = int(random(2));
+    int UpDown = int(random(2));
+    if (LeftRight == 1) {
       xVelocity = 5;
+        if (UpDown == 1) {
+          yVelocity = 5;
+        }
+        else {
+          yVelocity = -5;
+        }
     } else {
       xVelocity = -5;
+      if (UpDown == 1) {
+          yVelocity = 5;
+        }
+        else {
+          yVelocity = -5;
+        }
     }
   }
   void display() {
@@ -19,5 +32,6 @@ class PongBall {
 
   void move() {
     x += xVelocity;
+    y += yVelocity;
   }
 }

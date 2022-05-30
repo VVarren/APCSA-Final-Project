@@ -32,12 +32,12 @@ class Pong {
     //detect collision
     if (Ball.x-(LeftPaddle.x+width/30) <= 10) {
       if (dist(Ball.x, Ball.y, LeftPaddle.x+width/30, LeftPaddle.y+(height/5)/2) <= height/5 ) {
-        Ball.xVelocity = 0;
+        Ball.xVelocity = + abs(Ball.xVelocity);
       }
     }
     if ((RightPaddle.x+width/30) - Ball.x <= 30) {
       if (dist(Ball.x, Ball.y, RightPaddle.x-width/30, RightPaddle.y+(height/5)/2) <= height/5) {
-        Ball.xVelocity = 0;
+        Ball.xVelocity = -Ball.xVelocity;;
       }
     }
   }
