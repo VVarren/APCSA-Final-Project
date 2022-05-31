@@ -44,25 +44,33 @@ class Pong {
       Ball.yVelocity = -Ball.yVelocity;
     }
     //detect collision
+    //left
     if (Ball.x-(LeftPaddle.x+width/30) <= 10) {
-      if (dist(Ball.x, Ball.y, LeftPaddle.x+width/30, LeftPaddle.y+(height/5)/2) <= height/5 ) {
+      if (dist(Ball.x, Ball.y, LeftPaddle.x+width/30, LeftPaddle.y+(height/5)/2) <= (height/5)/2) {
         Ball.xVelocity = + abs(Ball.xVelocity);
+        Ball.xVelocity += random(2);
+        Ball.yVelocity += random(2);
+        
       }
     }
-    if ((RightPaddle.x+width/30) - Ball.x <= 30) {
-      if (dist(Ball.x, Ball.y, RightPaddle.x-width/30, RightPaddle.y+(height/5)/2) <= height/5) {
+    //right
+    if ((RightPaddle.x+width/30) - Ball.x <= 33) {
+      if (dist(Ball.x, Ball.y, RightPaddle.x-width/30, RightPaddle.y+(height/5)/2) <= (height/5)/2) {
         Ball.xVelocity = -Ball.xVelocity;
+        Ball.xVelocity -= random(2);
+        Ball.yVelocity -= random(2);
         ;
       }
     }
     //scoring
-    if(Ball.x >= width){
+    if(Ball.x >= width-(width/30)){
       leftScore++;
-      Ball.spawn();
+      Ball.respawn();
+      
     }
-    if(Ball.x <= 0){
+    if(Ball.x <= + (width/30)){
       rightScore++;
-      Ball.spawn();
+      Ball.respawn();
     }
   }
   

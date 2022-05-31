@@ -37,8 +37,27 @@ class PongBall {
     y += yVelocity;
   }
   
-  void spawn(){
-    y = int(random(height));
+  void respawn(){
+    int LeftRight = int(random(2));
+    int UpDown = int(random(2));
+    if (LeftRight == 1) {
+      xVelocity = 5;
+        if (UpDown == 1) {
+          yVelocity = 5;
+        }
+        else {
+          yVelocity = -5;
+        }
+    } else {
+      xVelocity = -5;
+      if (UpDown == 1) {
+          yVelocity = 5;
+        }
+        else {
+          yVelocity = -5;
+        }
+    }
+    y = int(random(100,height-100));
     x = int(width/2);
   }
 }
