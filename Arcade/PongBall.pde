@@ -9,20 +9,20 @@ class PongBall {
     int LeftRight = int(random(2));
     int UpDown = int(random(2));
     if (LeftRight == 1) {
-      xVelocity = 5;
+      xVelocity = int(random(4,5));
         if (UpDown == 1) {
-          yVelocity = 5;
+          yVelocity = int(random(4,5));
         }
         else {
-          yVelocity = -5;
+          yVelocity = int(random(-4,-5));
         }
     } else {
       xVelocity = -5;
       if (UpDown == 1) {
-          yVelocity = 5;
+          yVelocity = int(random(4,5));
         }
         else {
-          yVelocity = -5;
+          yVelocity = int(random(-4,-5));
         }
     }
     y = ySpawn;
@@ -41,20 +41,20 @@ class PongBall {
     int LeftRight = int(random(2));
     int UpDown = int(random(2));
     if (LeftRight == 1) {
-      xVelocity = 5;
+      xVelocity = int(random(4,5));
         if (UpDown == 1) {
-          yVelocity = 5;
+          yVelocity = int(random(4,5));
         }
         else {
-          yVelocity = -5;
+          yVelocity = int(random(-4,-5));
         }
     } else {
       xVelocity = -5;
       if (UpDown == 1) {
-          yVelocity = 5;
+          yVelocity = int(random(4,5));
         }
         else {
-          yVelocity = -5;
+          yVelocity = int(random(-4,-5));
         }
     }
     y = int(random(100,height-100));

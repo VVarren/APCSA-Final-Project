@@ -55,7 +55,7 @@ class Pong {
     }
     //right
     if ((RightPaddle.x+width/30) - Ball.x <= 33) {
-      if (dist(Ball.x, Ball.y, RightPaddle.x-width/30, RightPaddle.y+(height/5)/2) <= (height/5)/2) {
+      if (dist(Ball.x, Ball.y, RightPaddle.x-width/30, RightPaddle.y+(height/5)/2) <= ((height/5)/2)+10) {
         Ball.xVelocity = -Ball.xVelocity;
         Ball.xVelocity -= random(2);
         Ball.yVelocity -= random(2);

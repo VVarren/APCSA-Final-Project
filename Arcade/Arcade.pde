@@ -1,5 +1,8 @@
 Pong Game;
 
+
+//Need to make my graphical interface
+//Not BlackJack
 void setup() {
   size(700, 500);
   background(0);
