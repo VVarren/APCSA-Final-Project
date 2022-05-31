@@ -8,9 +8,11 @@ void setup() {
   //surface.setSize(1500,1200);
   surface.setResizable(true);
   Game = new Pong();
+  //delay(1000);
 }
 
 void draw() {
+  
   background(0);
   Game.display();
   Game.update();

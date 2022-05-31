@@ -5,6 +5,7 @@ class PongBall {
   int yVelocity;
 
   PongBall() {
+    int ySpawn = int(random(height));
     int LeftRight = int(random(2));
     int UpDown = int(random(2));
     if (LeftRight == 1) {
@@ -24,6 +25,7 @@ class PongBall {
           yVelocity = -5;
         }
     }
+    y = ySpawn;
   }
   void display() {
     ellipse(x, y, 15, 15);
@@ -33,5 +35,10 @@ class PongBall {
   void move() {
     x += xVelocity;
     y += yVelocity;
+  }
+  
+  void spawn(){
+    y = int(random(height));
+    x = int(width/2);
   }
 }

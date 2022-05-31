@@ -3,11 +3,18 @@ class Pong {
   Paddle LeftPaddle = new Paddle(0, 0);
   Paddle RightPaddle = new Paddle(width-width/30, 0);
   PongBall Ball = new PongBall();
+  int leftScore = 0;
+  int rightScore = 0;
 
   void display() {
     LeftPaddle.display();
     RightPaddle.display();
     Ball.display();
+    textSize(50);
+    //For left paddle
+    scoreBoard((width*1)/3,50,leftScore);
+    //For right paddle
+    scoreBoard((width*2)/3,50,rightScore);
   }
   void update() {
     Ball.move();
@@ -36,10 +43,6 @@ class Pong {
     if (Ball.y >= height-10) {
       Ball.yVelocity = -Ball.yVelocity;
     }
-
-
-
-
     //detect collision
     if (Ball.x-(LeftPaddle.x+width/30) <= 10) {
       if (dist(Ball.x, Ball.y, LeftPaddle.x+width/30, LeftPaddle.y+(height/5)/2) <= height/5 ) {
@@ -52,5 +55,18 @@ class Pong {
         ;
       }
     }
+    //scoring
+    if(Ball.x >= width){
+      leftScore++;
+      Ball.spawn();
+    }
+    if(Ball.x <= 0){
+      rightScore++;
+      Ball.spawn();
+    }
+  }
+  
+  void scoreBoard(int positionX,int positionY, int Score){
+    text(Score,positionX,positionY);
   }
 }
