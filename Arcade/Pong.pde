@@ -26,9 +26,20 @@ class Pong {
         LeftPaddle.y += height/30;
       }
     }
-    //boundary
+    //boundary (paddle)
     RightPaddle.y = constrain(RightPaddle.y, 0, height-RightPaddle.h);
     LeftPaddle.y = constrain(LeftPaddle.y, 0, height-RightPaddle.h);
+    //boundary (in ur walls (top/bottom))
+    if (Ball.y <= 10) {
+      Ball.yVelocity = abs(Ball.yVelocity);
+    }
+    if (Ball.y >= height-10) {
+      Ball.yVelocity = -Ball.yVelocity;
+    }
+
+
+
+
     //detect collision
     if (Ball.x-(LeftPaddle.x+width/30) <= 10) {
       if (dist(Ball.x, Ball.y, LeftPaddle.x+width/30, LeftPaddle.y+(height/5)/2) <= height/5 ) {
@@ -37,7 +48,8 @@ class Pong {
     }
     if ((RightPaddle.x+width/30) - Ball.x <= 30) {
       if (dist(Ball.x, Ball.y, RightPaddle.x-width/30, RightPaddle.y+(height/5)/2) <= height/5) {
-        Ball.xVelocity = -Ball.xVelocity;;
+        Ball.xVelocity = -Ball.xVelocity;
+        ;
       }
     }
   }
