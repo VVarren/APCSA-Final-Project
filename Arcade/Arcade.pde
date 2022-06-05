@@ -1,6 +1,7 @@
 Pong Game;
 PImage bird,background,startscreen,tube;
-
+//word guess
+//word maker (given these array of letters. make as many words as possible)
 //Need to make my graphical interface
 //Not BlackJack
 void setup() {
