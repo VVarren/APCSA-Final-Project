@@ -4,6 +4,7 @@ Pong Game;
 //Need to make my graphical interface
 //Not BlackJack
 void setup() {
+  frameRate(60);
   size(700, 500);
   background(0);
   //Need for later to change the size of the board
