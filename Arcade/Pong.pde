@@ -65,11 +65,13 @@ class Pong {
     //scoring
     if(Ball.x >= width-(width/30)){
       leftScore++;
+      
       Ball.respawn();
       
     }
     if(Ball.x <= + (width/30)){
       rightScore++;
+      
       Ball.respawn();
     }
   }
@@ -77,4 +79,6 @@ class Pong {
   void scoreBoard(int positionX,int positionY, int Score){
     text(Score,positionX,positionY);
   }
+  
+  
 }
