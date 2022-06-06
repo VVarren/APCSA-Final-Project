@@ -457,7 +457,7 @@ class WordGuess{
   String word = words[int(random(words.length-1))];
   char[] wordHidden = new char [word.length()];
   String wordNotHidden;
-  int lives = 10;
+  int lives = 7;
   boolean NotgameOver = true;
   
   HashSet<Character> wrongs = new HashSet<Character>();
@@ -478,7 +478,7 @@ class WordGuess{
     int increment = 0;
     for (int i = 0;i<wordHidden.length;i++){
       text(wordHidden[i],(width*1)/(word.length())+increment,height/2);
-      increment += 100;
+      increment += 50;
     } 
      wordNotHidden = new String(wordHidden);
     text("Wrong Letters: "+ wrongs.toString(),width/2,500);
