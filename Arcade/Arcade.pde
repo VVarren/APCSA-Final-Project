@@ -17,9 +17,14 @@ void setup() {
 }
 
 void draw() {
-  WordGame.displayWord();
+  
+  //WordGame.displayWord();
  //background(0);
  //PongGame.display();
   //PongGame.update();
 
 }
+
+void keyPressed(){
+    WordGame.keyPressed();
+  }
